@@ -1,3 +1,4 @@
+
 proxy_http_version 1.1;
 
 location /api/ { proxy_pass http://backend-dev.vravru135.online:8080/; }
