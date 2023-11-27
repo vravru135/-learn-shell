@@ -1,5 +1,3 @@
-
-
 proxy_http_version 1.1;
 
 location /api/ { proxy_pass http://localhost:8080/; }
