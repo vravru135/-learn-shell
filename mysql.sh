@@ -20,3 +20,4 @@ echo $?
 
 echo -e "${color} set mysql passward \e[0m"
 mysql_secure_installation --set-root-pass ExpenseApp@1 "&>>$log_file"
+echo $?
