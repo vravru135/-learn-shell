@@ -10,11 +10,11 @@ echo -e "${color} Copy Expense Config file \e[0m"
 cp expense.conf /etc/nginx/default.d/expense.conf "&>>$log_file"
 echo $?
 
-echo -e "${color} Old Nginx Content \e[0m"
+echo -e "${color} clean Old Nginx Content \e[0m"
 rm -rf /usr/share/nginx/html/* "&>>$log_file"
 echo $?
 
-echo -e "${color} Download Frontend Application Code  \e[0m"
+echo -e "${color} Download Frontend Application Code \e[0m"
 curl -o /tmp/frontend.zip https://expense-artifacts.s3.amazonaws.com/frontend.zip "&>>$log_file"
 echo $?
 
