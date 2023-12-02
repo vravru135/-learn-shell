@@ -1,12 +1,12 @@
 log_file=/tmp/expense.log
 color="\e[33m"
-echo $?
+
 
 echo -e "\e[33m Installing Nginx \e[0m"
 dnf install nginx -y "&>>$log_file"
 echo $?
 
-echo -e "\e[33m copy Expense Config file \e[0m"
+echo -e "\e[33m Copy Expense Config file \e[0m"
 cp expense.conf /etc/nginx/default.d/expense.conf "&>>$log_file"
 echo $?
 
