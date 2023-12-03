@@ -43,7 +43,7 @@ npm install &>>$log_file
 echo $?
 
 echo -e "${color} install mysql client to load schema \e[0m"
-dnf install mysql -y  &>>$log_file
+dnf install mysql -y &>>$log_file
 echo $?
 
 echo -e "${color} load schema \e[0m"
