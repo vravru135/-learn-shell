@@ -95,7 +95,7 @@ else
    echo -e "\e[31m FAILURE \e[0m"
 fi
 
-echo -e "${color} Load Schema \e[0m"
+echo -e "${color} load schema \e[0m"
 mysql -h mysql-dev.vravru135.online -uroot -pExpenseApp@1 < /app/schema/backend.sql &>>$log_file
 if [ $? -eq 0 ]; then
    echo -e "\e[32m SUCCESS \e[0m"
