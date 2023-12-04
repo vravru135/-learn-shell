@@ -69,7 +69,7 @@ else
 fi
 
 echo -e "${color} Extract Application Content \e[0m"
-cd /app "&>>$log_file"
+cd /app &>>$log_file
 unzip /tmp/backend.zip &>>$log_file
 if [ $? -eq 0 ]; then
    echo -e "\e[32m SUCCESS \e[0m"
