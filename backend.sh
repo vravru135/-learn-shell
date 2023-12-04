@@ -17,7 +17,7 @@ else
    echo -e "\e[31m FAILURE \e[0m"
 fi
 
-echo -e "${color} install nodejs \e[0m"
+echo -e "${color} Install nodejs \e[0m"
 dnf install nodejs -y &>>$log_file
 if [ $? -eq 0 ]; then
    echo -e "\e[32m SUCCESS \e[0m"
@@ -26,7 +26,7 @@ else
 fi
 
 echo -e "${color} Copy Backend Service File \e[0m"
-cp backend.service /etc/systemd/system/backend.servicem &>>$log_file
+cp backend.service /etc/systemd/system/backend.service &>>$log_file
 if [ $? -eq 0 ]; then
    echo -e "\e[32m SUCCESS \e[0m"
 else
