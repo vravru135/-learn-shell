@@ -1,7 +1,7 @@
 log_file=/tmp/expense.log
 color="\e[33m"
 
-echo -e "${color} disable nodejs default version \e[0m"
+echo -e "${color} Disable Nodejs Default Version \e[0m"
 dnf module disable nodejs -y &>>$log_file
 if [ $? -eq 0 ]; then
    echo -e "\e[32m SUCCESS \e[0m"
@@ -33,7 +33,7 @@ else
    echo -e "\e[31m FAILURE \e[0m"
 fi
 
-id expense &>>$log-file
+id expense &>>$log_file
 if [ $? -ne 0 ]; then
 echo -e "${color} Add Application user \e[0m"
 useradd expense &>>$log_file
