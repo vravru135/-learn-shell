@@ -25,7 +25,7 @@ else
    echo -e "\e[31m FAILURE \e[0m"
 fi
 
-echo -e "${color} copy backend service file \e[0m"
+echo -e "${color} Copy Backend Service File \e[0m"
 cp backend.service /etc/systemd/system/backend.servicem &>>$log_file
 if [ $? -eq 0 ]; then
    echo -e "\e[32m SUCCESS \e[0m"
@@ -43,7 +43,7 @@ else
    echo -e "\e[31m FAILURE \e[0m"
 fi
 
-echo -e "${color} create application directory \e[0m"
+echo -e "${color} Create Application Directory \e[0m"
 mkdir /app &>>$log_file
 if [ $? -eq 0 ]; then
    echo -e "\e[32m SUCCESS \e[0m"
@@ -51,7 +51,7 @@ else
    echo -e "\e[31m FAILURE \e[0m"
 fi
 
-echo -e "${color} delete old application content \e[0m"
+echo -e "${color} Delete Old Application Content \e[0m"
 rm -rf /app/* &>>$log_file
 if [ $? -eq 0 ]; then
    echo -e "\e[32m SUCCESS \e[0m"
@@ -59,7 +59,7 @@ else
    echo -e "\e[31m FAILURE \e[0m"
 fi
 
-echo -e "${color} download application content \e[0m"
+echo -e "${color} Download Application Content \e[0m"
 curl -o /tmp/backend.zip https://expense-artifacts.s3.amazonaws.com/backend.zip &>>$log_file
 if [ $? -eq 0 ]; then
    echo -e "\e[32m SUCCESS \e[0m"
@@ -67,7 +67,7 @@ else
    echo -e "\e[31m FAILURE \e[0m"
 fi
 
-echo -e "${color} extract application content \e[0m"
+echo -e "${color} Extract Application Content \e[0m"
 cd /app "&>>$log_file"
 unzip /tmp/backend.zip &>>$log_file
 if [ $? -eq 0 ]; then
@@ -76,7 +76,7 @@ else
    echo -e "\e[31m FAILURE \e[0m"
 fi
 
-echo -e "${color} download nodejs dependencies \e[0m"
+echo -e "${color} Download Nodejs Dependencies \e[0m"
 npm install &>>$log_file
 if [ $? -eq 0 ]; then
    echo -e "\e[32m SUCCESS \e[0m"
@@ -84,7 +84,7 @@ else
    echo -e "\e[31m FAILURE \e[0m"
 fi
 
-echo -e "${color} install mysql client to load schema \e[0m"
+echo -e "${color} Install MySQL Client to Load Schema \e[0m"
 dnf install mysql -y &>>$log_file
 if [ $? -eq 0 ]; then
    echo -e "\e[32m SUCCESS \e[0m"
@@ -92,7 +92,7 @@ else
    echo -e "\e[31m FAILURE \e[0m"
 fi
 
-echo -e "${color} load schema \e[0m"
+echo -e "${color} Load Schema \e[0m"
 mysql -h mysql-dev.vravru135.online -uroot -pExpenseApp@1 < /app/schema/backend.sql &>>$log_file
 if [ $? -eq 0 ]; then
    echo -e "\e[32m SUCCESS \e[0m"
@@ -100,7 +100,7 @@ else
    echo -e "\e[31m FAILURE \e[0m"
 fi
 
-echo -e "${color} starting backend service \e[0m"
+echo -e "${color} Starting Backend Service \e[0m"
 systemctl daemon-reload &>>$log_file
 systemctl enable backend &>>$log_file
 systemctl restart backend &>>$log_file
