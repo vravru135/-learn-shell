@@ -14,7 +14,7 @@ status_check() {
   else
      echo -e "\e[31m FAILURE \e[0m"
   fi
-  }
+}
 
 echo -e "${color} Disable Nodejs Default Version \e[0m"
 dnf module disable nodejs -y &>>$log_file
