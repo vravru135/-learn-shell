@@ -1,5 +1,6 @@
 sample() {
-  echo Hello
+  echo Function no of Arguments - $#
+  echo Function no of Input - $*
 }
 
-sample
+sample Hello World
