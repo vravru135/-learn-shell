@@ -9,3 +9,4 @@ status_check() {
      exit 1
   fi
 }
+
