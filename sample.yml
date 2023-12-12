@@ -1,7 +1,0 @@
-- name: sample
-  hosts: all
-  tasks:
-    - name: ping
-      ansible.builtin.ping:
-
-
