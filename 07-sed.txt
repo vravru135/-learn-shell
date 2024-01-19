@@ -52,4 +52,6 @@ sed 's/root/admin/g' file
 
    sed -e '1d' -e '2 a Hello World' file
 
-   -e option is used to enable multiple operations with single sed command 
+   -e option is used to enable multiple operations with single sed command
+
+
